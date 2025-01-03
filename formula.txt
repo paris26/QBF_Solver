@@ -1,0 +1,31 @@
+c qbfgen params: ./blocksqbf -c 10 -b 2 -bs 5 -bs 5 -bc 2 -bc 1
+c time: Fri Jan  3 17:14:44 2025
+c seed = 3507285272
+c sort clauses = no
+c dup. resolve limit = 100
+c verbosity = 0
+c num blocks = 2
+c num clauses = 10
+c block_sizes[0] = 5
+c block_sizes[1] = 5
+c num vars = 10
+c perblock_nums[0] = 2
+c perblock_nums[1] = 1
+c clause len = 3
+c minblockids[0] = 1
+c maxblockids[0] = 5
+c minblockids[1] = 6
+c maxblockids[1] = 10
+p cnf 10 10
+a 1 2 3 4 5 0
+e 6 7 8 9 10 0
+5 4 -8 0
+-3 -1 -6 0
+-2 1 -10 0
+-2 1 -7 0
+-1 -2 -9 0
+-3 -2 10 0
+3 5 -7 0
+-1 -5 -6 0
+2 5 -7 0
+-5 -4 7 0
