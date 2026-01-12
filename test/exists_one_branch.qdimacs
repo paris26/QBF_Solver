@@ -1,0 +1,15 @@
+c EXISTS needs only one branch
+c
+c Formula: EXISTS x (x OR NOT x)
+c
+c This formula is trivially SATISFIABLE because:
+c   - (x OR NOT x) is a tautology - always true regardless of x
+c   - EXISTS only needs to find ONE value, and either works!
+c
+c This shows that EXISTS succeeds if ANY branch works.
+c
+c Expected result: SATISFIABLE
+c
+p cnf 1 1
+e 1 0
+1 -1 0

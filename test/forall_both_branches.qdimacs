@@ -1,0 +1,22 @@
+c FORALL requires both branches to succeed
+c
+c Formula: FORALL x EXISTS y (x OR y) AND (NOT x OR NOT y)
+c
+c This formula is SATISFIABLE because:
+c   - When x=true:  EXISTS can pick y=false -> (T OR F) AND (F OR T) = T AND T = T
+c   - When x=false: EXISTS can pick y=true  -> (F OR T) AND (T OR F) = T AND T = T
+c
+c The EXISTS player has a winning strategy for BOTH values of x.
+c This is the classic example showing why FORALL needs both branches.
+c
+c Game interpretation:
+c   FORALL player: "I'll try to break your formula!"
+c   EXISTS player: "Whatever x you pick, I can respond with the right y"
+c
+c Expected result: SATISFIABLE
+c
+p cnf 2 2
+a 1 0
+e 2 0
+1 2 0
+-1 -2 0

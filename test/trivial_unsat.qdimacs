@@ -1,0 +1,13 @@
+c Trivial UNSAT formula
+c
+c Formula: EXISTS x1 (x1) AND (NOT x1)
+c
+c This formula requires x1 to be both true AND false simultaneously.
+c Impossible! No value of x1 can satisfy both clauses.
+c
+c Expected result: UNSATISFIABLE
+c
+p cnf 1 2
+e 1 0
+1 0
+-1 0

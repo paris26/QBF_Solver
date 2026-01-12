@@ -1,0 +1,30 @@
+c Alternating Quantifiers Example
+c
+c Formula: FORALL x EXISTS y FORALL z (x OR y OR z) AND (NOT x OR NOT y OR NOT z)
+c
+c This formula has alternating quantifier blocks: FORALL-EXISTS-FORALL
+c
+c Analysis:
+c   For the EXISTS player to win, for each x value, they must find a y
+c   such that for ALL z values, the formula is satisfied.
+c
+c   Let's check x=true:
+c     Try y=false:
+c       z=true:  (T OR F OR T) AND (F OR T OR F) = T AND T = T
+c       z=false: (T OR F OR F) AND (F OR T OR T) = T AND T = T
+c     y=false works for all z! EXISTS found a winning response.
+c
+c   Let's check x=false:
+c     Try y=true:
+c       z=true:  (F OR T OR T) AND (T OR F OR F) = T AND T = T
+c       z=false: (F OR T OR F) AND (T OR F OR T) = T AND T = T
+c     y=true works for all z! EXISTS found a winning response.
+c
+c Expected result: SATISFIABLE
+c
+p cnf 3 2
+a 1 0
+e 2 0
+a 3 0
+1 2 3 0
+-1 -2 -3 0

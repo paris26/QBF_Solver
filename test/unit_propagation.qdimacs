@@ -1,0 +1,18 @@
+c Unit Propagation Example
+c
+c Formula: EXISTS x1, x2 (x1) AND (NOT x1 OR x2)
+c
+c This formula demonstrates unit propagation:
+c   1. Clause (x1) is a unit clause - x1 MUST be true
+c   2. With x1=true, clause (NOT x1 OR x2) becomes (FALSE OR x2) = (x2)
+c   3. Now (x2) is a unit clause - x2 MUST be true
+c   4. All clauses satisfied!
+c
+c Preprocessing should solve this entirely without search.
+c
+c Expected result: SATISFIABLE
+c
+p cnf 2 2
+e 1 2 0
+1 0
+-1 2 0

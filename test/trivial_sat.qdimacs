@@ -1,0 +1,12 @@
+c Trivial SAT formula
+c
+c Formula: EXISTS x1 (x1)
+c
+c This is the simplest satisfiable QBF.
+c The EXISTS player can simply set x1=true to satisfy the formula.
+c
+c Expected result: SATISFIABLE
+c
+p cnf 1 1
+e 1 0
+1 0

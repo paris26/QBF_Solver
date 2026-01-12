@@ -1,0 +1,26 @@
+c FORALL player wins (UNSAT)
+c
+c Formula: FORALL x EXISTS y (x OR y) AND (NOT x OR y) AND (x OR NOT y) AND (NOT x OR NOT y)
+c
+c This formula is UNSATISFIABLE because:
+c   No matter what y the EXISTS player picks, one of the clauses will be false.
+c
+c   Analysis for x=true:
+c     y=true:  (T OR T) AND (F OR T) AND (T OR F) AND (F OR F) = T AND T AND T AND F = F
+c     y=false: (T OR F) AND (F OR F) AND (T OR T) AND (F OR T) = T AND F AND T AND T = F
+c
+c   Analysis for x=false:
+c     y=true:  (F OR T) AND (T OR T) AND (F OR F) AND (T OR F) = T AND T AND F AND T = F
+c     y=false: (F OR F) AND (T OR F) AND (F OR T) AND (T OR T) = F AND T AND T AND T = F
+c
+c The FORALL player can always falsify by picking x=true (or x=false).
+c
+c Expected result: UNSATISFIABLE
+c
+p cnf 2 4
+a 1 0
+e 2 0
+1 2 0
+-1 2 0
+1 -2 0
+-1 -2 0
